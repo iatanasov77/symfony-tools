@@ -1,0 +1,23 @@
+{
+	"name": "iatanasov77/symfony-tools",
+    "type": "symfony-bundle",
+    "description": "Symfony Developement Tools",
+    "keywords": ["Symfony", "Tools", "Vankosoft"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivan Atanasov",
+            "email": "i.atanasov77@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "symfony/console": "~3.4|~4.0"
+    },
+    "autoload": {
+        "psr-4": {
+        	"VankoSoft\\Console\\": "Console/"
+        }
+    },
+    "minimum-stability": "dev"
+}

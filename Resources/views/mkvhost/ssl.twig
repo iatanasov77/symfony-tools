@@ -1,0 +1,28 @@
+# ************************************
+# Vhost template in module puppetlabs-apache
+# Managed by Puppet
+# ************************************
+#
+Listen 443
+
+<VirtualHost *:443>
+  <IfModule mod_ssl.c>
+    SSLEngine On
+    
+    SSLCertificateFile /vagrant/vagrant.d/etc/SSL_CERTS/myprojects.lh.crt
+    SSLCertificateKeyFile /vagrant/vagrant.d/etc/SSL_CERTS/myprojects.lh.key
+  </IfModule>
+
+    ServerAdmin {{serverAdmin}}
+    ServerName {{host}}
+    ServerAlias www.{{host}}
+    DocumentRoot {{documentRoot}}
+    
+    <Directory {{documentRoot}}>
+   	   AllowOverride All
+       Require all granted
+    </Directory>
+    
+    CustomLog {{apacheLogDir}}{{host}}-access.log combined
+    ErrorLog {{apacheLogDir}}{{host}}-error.log
+</VirtualHost>
